@@ -10,7 +10,6 @@
 <body>
 <form action = "createNewListServlet" method="post">
 Team Name: <input type="text" name = "listName"><br />
-User Name: <input type="text" name = "userName"><br />
 
 Available Items:<br />
 <select name = "allItemsToAdd" multiple size = "6">

@@ -10,7 +10,7 @@
 <body>
 <form action = "editListDetailsServlet" method="post">
 <input type ="hidden" name = "id" value= "${listToEdit.id}">
-List Name: <input type ="text" name = "listName" value= "${listToEdit.listName}"><br />
+Team Name: <input type ="text" name = "listName" value= "${listToEdit.listName}"><br />
 
 Available Items:<br />
 
