@@ -42,7 +42,7 @@ public class ListNavigationServlet extends HttpServlet {
 
 		if (act == null) {
 			// no button has been selected
-			getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/viewAllTeamServlet").forward(request, response);
 
 		} else if (act.equals("delete")) {
 			try {
@@ -53,7 +53,7 @@ public class ListNavigationServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to click a button");
 			} finally {
-				getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllTeamServlet").forward(request, response);
 			}
 
 		} else if (act.equals("edit")) {
@@ -71,7 +71,7 @@ public class ListNavigationServlet extends HttpServlet {
 				}
 				getServletContext().getRequestDispatcher("/edit-list.jsp").forward(request, response);
 			} catch (NumberFormatException e) {
-				getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllPlayerServlet").forward(request, response);
 			} 
 
 		} else if (act.equals("add")) {
