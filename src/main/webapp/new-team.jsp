@@ -11,7 +11,7 @@
 <form action = "createNewListServlet" method="post">
 Team Name: <input type="text" name = "listName"><br />
 
-Available Items:<br />
+Available Players:<br />
 <select name = "allItemsToAdd" multiple size = "6">
 <c:forEach items = "${requestScope.allItems}" var="currentitem">
 <option value = "${currentitem.id}"> ${currentitem.name} | ${currentitem.position}</option>
@@ -21,6 +21,6 @@ Available Items:<br />
 <input type="submit" value="Create list and Add Items">
 
 </form>
-<a href="index.html">Go add new items instead</a>
+<a href="index.html">Go add new players instead</a>
 </body>
 </html>

@@ -22,6 +22,6 @@ Available Items:<br />
 <input type="submit" value="Create list and Add Items">
 
 </form>
-<a href="index.html">Go add new items instead</a>
+<a href="index.html">Go add new players instead</a>
 </body>
 </html>

@@ -31,7 +31,7 @@ ${listVal.name}, ${listVal.day}
 <input type="submit" value="add" name="doThisToList">
 
 </form>
-<a href="addItemsForListServlet">Create a new list</a><br />
-<a href="index.html">Insert a new item</a>
+<a href="addItemsForListServlet">Create a new team</a><br />
+<a href="index.html">Insert a new player</a>
 </body>
 </html>

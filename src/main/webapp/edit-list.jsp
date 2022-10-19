@@ -5,23 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit An Existing List</title>
+<title>Edit An Existing Team</title>
 </head>
 <body>
 <form action = "editListDetailsServlet" method="post">
 <input type ="hidden" name = "id" value= "${listToEdit.id}">
 Team Name: <input type ="text" name = "listName" value= "${listToEdit.listName}"><br />
 
-Available Items:<br />
+Available Players:<br />
 
 <select name="allItemsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allItems}" var="currentitem">
-   <option value = "${currentitem.id}">${currentitem.name} | ${currentitem.position}</option>
+   
 </c:forEach>
 </select>
 <br />
 <input type = "submit" value="Edit List and Add Items">
 </form>
-<a href = "index.html">Go add new items instead.</a>
+<a href = "index.html">Go add new players instead.</a>
 </body>
 </html>
