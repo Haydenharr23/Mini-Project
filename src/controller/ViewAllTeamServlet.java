@@ -1,14 +1,18 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.ListDetails;
+
 /**
- * Servlet implementation class viewAllTasksServlet
+ * Servlet implementation class ViewAllListsServlet
  */
 @WebServlet("/viewAllTeamServlet")
 public class ViewAllTeamServlet extends HttpServlet {
@@ -27,13 +31,15 @@ public class ViewAllTeamServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ListItemHelper dao = new ListItemHelper();
-		request.setAttribute("allItems", dao.showAllItems());
-		String path = "/player-list.jsp";
-		if(dao.showAllItems().isEmpty()) {
-			path = "/index.html";
+		ListDetailsHelper ldh = new ListDetailsHelper();
+		List<ListDetails> abc = ldh.getLists();
+		request.setAttribute("allLists", abc);
+	
+		if(abc.isEmpty()) {
+			request.setAttribute("allLists", "");
 		}
-		getServletContext().getRequestDispatcher(path).forward(request, response);
+		
+		getServletContext().getRequestDispatcher("/list-by-user.jsp").forward(request, response);
 		
 	}
 

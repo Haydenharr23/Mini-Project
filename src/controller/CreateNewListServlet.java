@@ -62,14 +62,14 @@ public class CreateNewListServlet extends HttpServlet {
 		
 		//User user = new User(userName);
 		
-		//ListDetails sld = new ListDetails(listName, ld, user);
+		ListDetails sld = new ListDetails(listName);
 		
-		//sld.setListOfItems(selectedItemsInList);
+		sld.setListOfItems(selectedItemsInList);
 		
-	//	ListDetailsHelper slh = new ListDetailsHelper();
-	//	slh.insertNewListDetails(sld);
+		ListDetailsHelper slh = new ListDetailsHelper();
+		slh.insertNewListDetails(sld);
 		
-		getServletContext().getRequestDispatcher("/viewAllPlayerServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllTeamServlet").forward(request, response);
 	}
 
 	/**

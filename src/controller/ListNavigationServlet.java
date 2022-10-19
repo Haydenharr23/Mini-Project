@@ -71,11 +71,11 @@ public class ListNavigationServlet extends HttpServlet {
 				}
 				getServletContext().getRequestDispatcher("/edit-list.jsp").forward(request, response);
 			} catch (NumberFormatException e) {
-				getServletContext().getRequestDispatcher("/viewAllPlayerServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllTeamServlet").forward(request, response);
 			} 
 
 		} else if (act.equals("add")) {
-			getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/new-team.jsp").forward(request, response);
 		}
 		
 		

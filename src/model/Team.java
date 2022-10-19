@@ -20,7 +20,7 @@ public class Team {
 	@Id
 	@GeneratedValue
 	@Column(name="TEAM_ID")
-	private int teamID;
+	private int id;
 	@Column(name="NAME")
 	private String teamName;
 	
@@ -34,11 +34,11 @@ public class Team {
 			
 	}
 	
-	public int getTeamID() {
-		return teamID;
+	public int getID() {
+		return id;
 	}
-	public void setTeamID(int id) {
-		this.teamID = id;
+	public void setid(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return teamName;

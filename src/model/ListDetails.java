@@ -34,6 +34,13 @@ public class ListDetails {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * @param listName2
+	 */
+	public ListDetails(String lname) {
+		this.listName=lname;
+	}
+
 	public int getId() {
 		return id;
 	}

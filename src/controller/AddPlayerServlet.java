@@ -15,14 +15,14 @@ import model.Player;
 import model.Team;
 
 
-@WebServlet("/addTeamServlet")
-public class AddTeamServlet extends HttpServlet {
+@WebServlet("/addPlayerServlet")
+public class AddPlayerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddTeamServlet() {
+    public AddPlayerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

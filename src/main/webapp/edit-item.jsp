@@ -26,7 +26,7 @@
 </div>
 <div class="form-group">
 <label for="item">Position:</label>
-<input type = "text" name = "day"  value= "${itemToEdit.position}"><br />
+<input type = "text" name = "position"  value= "${itemToEdit.position}"><br />
 </div>
 <input type = "hidden" name = "id" value="${itemToEdit.id}">
 <input type = "submit" value="Save Edited Item" class="btn btn-primary">

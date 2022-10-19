@@ -20,7 +20,7 @@
 <c:forEach var="listVal" items="${currentlist.listOfItems}">
 <tr><td></td>
 <td colspan="3">
-${listVal.name}, ${listVal.day}
+${listVal.name}, ${listVal.position}
 </td>
 </tr>
 </c:forEach>
