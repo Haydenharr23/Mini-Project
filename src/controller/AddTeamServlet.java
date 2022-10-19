@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Player;
 import model.Team;
 
-/**
- * Servlet implementation class todoServlet
- */
+
 @WebServlet("/addTeamServlet")
 public class AddTeamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
