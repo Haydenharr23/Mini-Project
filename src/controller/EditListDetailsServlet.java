@@ -53,19 +53,12 @@ public class EditListDetailsServlet extends HttpServlet {
 
 		String newListName = request.getParameter("listName");
 
-		String month = request.getParameter("month");
-		String day = request.getParameter("day");
-		String year = request.getParameter("year");
 		
 		String userName = request.getParameter("userName");
 		//find our add the new shopper
 
 		LocalDate ld;
-		try {
-			ld = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
-		} catch (NumberFormatException ex) {
-			ld = LocalDate.now();
-		}
+		
 
 		try {
 			//items are selected in list to add
