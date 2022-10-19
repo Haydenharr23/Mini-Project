@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>full list</title>
+<title>full team</title>
 </head>
 <body>
 <form method="post" action="navigationServlet">
