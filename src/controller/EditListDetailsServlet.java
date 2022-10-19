@@ -83,7 +83,7 @@ public class EditListDetailsServlet extends HttpServlet {
 
 		dao.updateList(listToUpdate);
 
-		getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllTeamServlet").forward(request, response);
 	}
 
 }

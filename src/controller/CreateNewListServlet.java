@@ -69,7 +69,7 @@ public class CreateNewListServlet extends HttpServlet {
 	//	ListDetailsHelper slh = new ListDetailsHelper();
 	//	slh.insertNewListDetails(sld);
 		
-		getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllPlayerServlet").forward(request, response);
 	}
 
 	/**

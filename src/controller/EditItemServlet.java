@@ -41,7 +41,7 @@ public class EditItemServlet extends HttpServlet {
 				
 		dao.updateItem(itemToUpdate);
 
-		getServletContext().getRequestDispatcher("/viewAllTasksServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllPlayerServlet").forward(request, response);
 
 
 	}
