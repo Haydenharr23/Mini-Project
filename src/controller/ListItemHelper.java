@@ -7,12 +7,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import model.Player;
 import model.Team;
 
 public class ListItemHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("TaskList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("mini-project");
 
-	public void insertItem(Team li) {
+	public void insertItem(Player li) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(li);
@@ -20,28 +21,28 @@ public class ListItemHelper {
 		em.close();
 	}
 
-	public List<Team> showAllItems() {
+	public List<Player> showAllItems() {
 		EntityManager em = emfactory.createEntityManager();
-		List<Team> allItems = em.createQuery("SELECT i FROM Team i").getResultList();
+		List<Player> allItems = em.createQuery("SELECT i FROM Player i").getResultList();
 		return allItems;
 	}
 
-	public void deleteItem(Team toDelete) {
+	public void deleteItem(Player toDelete) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Team> typedQuery = em.createQuery(
-				"select li from Team li where li.name = :selectedName and li.day = :selectedDay",
-				Team.class);
+		TypedQuery<Player> typedQuery = em.createQuery(
+				"select li from Player li where li.name = :selectedName and li.position = :selectedPosition",
+				Player.class);
 		// Substitute parameter with actual data from the toDelete item
 		typedQuery.setParameter("selectedName", toDelete.getName());
-		//typedQuery.setParameter("selectedDay", toDelete.getDay());
+		typedQuery.setParameter("selectedPosition", toDelete.getPosition());
 
 		// we only want one result
 		typedQuery.setMaxResults(1);
 
 		// get the result and save it into a new list item
-		Team result = typedQuery.getSingleResult();
+		Player result = typedQuery.getSingleResult();
 
 		// remove it
 		em.remove(result);
@@ -50,16 +51,16 @@ public class ListItemHelper {
 
 	}
 
-	public Team searchForItemById(int idToEdit) {
+	public Player searchForItemById(int idToEdit) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Team found = em.find(Team.class, idToEdit);
+		Player found = em.find(Player.class, idToEdit);
 		em.close();
 		return found;
 	}
 
-	public void updateItem(Team toEdit) {
+	public void updateItem(Player toEdit) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -69,26 +70,26 @@ public class ListItemHelper {
 		em.close();
 	}
 
-	public List<Team> searchForItemByStore(String name) {
+	public List<Player> searchForItemByStore(String name) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Team> typedQuery = em.createQuery("select li from Team li where li.name = :selectedName", Team.class);
+		TypedQuery<Player> typedQuery = em.createQuery("select li from Player li where li.name = :selectedName", Player.class);
 		typedQuery.setParameter("selectedName", name);
 
-		List<Team> foundItems = typedQuery.getResultList();
+		List<Player> foundItems = typedQuery.getResultList();
 		em.close();
 		return foundItems;
 	}
 
-	public List<Team> searchForItemByItem(String itemName) {
+	public List<Player> searchForItemByItem(String itemName) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Team> typedQuery = em.createQuery("select li from Team li where li.day = :selectedDay", Team.class);
+		TypedQuery<Player> typedQuery = em.createQuery("select li from Player li where li.position = :selectedPosition", Player.class);
 		typedQuery.setParameter("selectedItem", itemName);
 
-		List<Team> foundItems = typedQuery.getResultList();
+		List<Player> foundItems = typedQuery.getResultList();
 		em.close();
 		return foundItems;
 	}

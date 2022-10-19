@@ -4,6 +4,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.Player</class>
 		<class>model.Team</class>
+		<class>model.ListDetails</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/todo"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
